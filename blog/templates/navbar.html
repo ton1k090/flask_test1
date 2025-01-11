@@ -12,14 +12,16 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url_for('report.report_list')}}">Reports</a>
         </li>
-        {% if current_user.is_authenticated %}
+        {% if current_user.is_authenticated %} <!-- Берется из ЮзерМиксин в модели юзера -->
           <li class="nav-item">
             <a class="nav-link active" href="{{ url_for('auth.logout') }}">Logout</a>
           </li>
         {% else %}
           <li class="nav-item">
             <a class="nav-link active" href="{{ url_for('auth.login') }}">Login</a>
+
           </li>
+        <a class="nav-link active" href="{{ url_for('user.register') }}">Register</a>
         {% endif %}
       </ul>
     </div>
